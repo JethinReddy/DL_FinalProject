@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection Result</title>
+</head>
+<body>
+    <h1>Emotion Detection Result</h1>
+
+    <h2>Processed Image:</h2>
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Processed Image">
+
+    <h2>Detected Emotions:</h2>
+    <ul>
+        {% for emotion, accuracy in emotions %}
+            <li>{{ emotion }}: {{ accuracy | round(2) }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Emotion Confidence Chart:</h2>
+    <img src="{{ url_for('static', filename='uploads/emotion_chart.png') }}" alt="Emotion Chart">
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
