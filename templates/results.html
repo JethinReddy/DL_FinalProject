@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Detection Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <ul>
+        {% for emotion, confidence in emotions %}
+        <li>{{ emotion }} - {{ confidence|round(2) }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
